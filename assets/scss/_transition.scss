@@ -1,0 +1,9 @@
+.fadelong-enter-active,
+.fadelong-leave-active {
+  transition: opacity 2s reverse;
+}
+
+.fadelong-enter-from,
+.fadelong-leave-to {
+  opacity: 0;
+}

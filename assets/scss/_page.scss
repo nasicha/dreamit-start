@@ -1,0 +1,48 @@
+.page {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.top {
+  height: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  z-index: 20;
+  position: relative;
+
+  svg {
+    padding: 1rem;
+  }
+}
+
+.mid {
+  position: relative;
+  height: 83vh;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  & h2 {
+    color: white;
+    font-weight: 200;
+    font-size: 1.7rem;
+    margin: 25px 0 0;
+    font-weight: 200;
+  }
+
+  & h3 {
+    color: #6C9FBE;
+    font-size: 0.8rem;
+    letter-spacing: 0.04rem;
+    font-weight: 300;
+    margin: 0;
+  }
+}
+
+.bottom {
+  height: 12vh;
+}
