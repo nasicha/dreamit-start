@@ -20,7 +20,7 @@ onMounted(() => {
 
   setTimeout(() => {
     showOverlay.value = true;
-  }, 6000);
+  }, 6500);
 
 });
 

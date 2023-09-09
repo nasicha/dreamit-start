@@ -2,7 +2,7 @@
   <Transition name="fade">
     <StartDream v-if="start" />
   </Transition>
-  <div class="mid">
+  <div v-if="!start" class="mid">
     <Menu class="menu" />
     <img src="~assets/img/half-circle.png" class="circle" />
     <img src="~assets/img/luna.png" class="luna" />
@@ -13,7 +13,7 @@
       <img src="~assets/img/dream-btn.png" class="dream-btn" @click="startDream" />
     </div>  
   </div>
-  <div class="bottom">
+  <div v-if="!start" class="bottom">
     <Home />
     <Category />
     <Profile />
