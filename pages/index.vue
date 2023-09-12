@@ -1,7 +1,10 @@
 <template>
   <div class="page">
-    <Background v-if="startClicked" :startApp="toggleDashboard" />
-    <div class="top">
+    <img src="~assets/img/backgroundImage.jpeg" class="page-background" />
+    <Transition name="bounce">
+      <Background v-if="startClicked" :startApp="toggleDashboard" />
+    </Transition>
+    <div class="top" :class="{'top--hide': startClicked}">
       <SmartphoneTopbar />
     </div>
     <Dashboard v-if="toggleDashboard" />
@@ -13,8 +16,6 @@ import SmartphoneTopbar from "@/assets/img/smartphone-topbar.svg?component";
 
 const toggleDashboard = ref(false);
 
-
-
 const startClicked = ref(false);
 
 const toggleStartClicked = () => {
@@ -22,7 +23,7 @@ const toggleStartClicked = () => {
 
   setTimeout(() => {
     toggleDashboard.value = true;
-  }, 4000);
+  }, 3000);
 };
 
 
@@ -41,7 +42,6 @@ useHead({
       href: "../assets/video/appstart.mp4",
       type: "video/mp4",
     },
-
     {
       rel: "preload",
       as: "video",
@@ -53,5 +53,8 @@ useHead({
 </script>
 <style lang="scss">
 @use '../assets/scss/page.scss';
+@use '../assets/scss/transition.scss';
+
+
 
 </style>

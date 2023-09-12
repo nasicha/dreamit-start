@@ -1,17 +1,19 @@
 <template>
   <div class="video-wrapper">
-  <Transition name="fade">
     <video v-if="!startApp" src="~assets/video/appstart.mp4" autoplay muted loop>
         <p>Your browser does not support the video tag.</p>
     </video>
-  </Transition>
-    <video src="~assets/video/bgWaves.mp4" autoplay muted>
+    <video src="~assets/video/bgWaves.mp4" :class="{hideVideo: !startApp}" autoplay muted>
         <p>Your browser does not support the video tag.</p>
     </video>
   </div>
 </template>
 <script setup lang="ts">
-const props = defineProps({startApp: Boolean})
+import gsap from "gsap";
+
+defineProps({startApp: Boolean})
+
+
 
 
 </script>
@@ -19,8 +21,8 @@ const props = defineProps({startApp: Boolean})
 .video-wrapper {
   position: absolute;
   width: 100vw;
-  height: 100vh;
-  z-index: -1;
+  height: 100%;
+  z-index: 0;
 
   video {
     width: 100%;
@@ -29,13 +31,8 @@ const props = defineProps({startApp: Boolean})
   }
 }
 
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.2s reverse;
+.hideVideo {
+  display: none;
 }
 
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
-}
 </style>
