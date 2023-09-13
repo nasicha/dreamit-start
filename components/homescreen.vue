@@ -4,7 +4,7 @@
     <div class="row">
       <img src="~assets/img/icon3.png" class="app-icon" />
       <img src="~assets/img/icon1.png" class="app-icon" />
-      <img src="~assets/img/icon7.png" class="app-icon" />
+      <img src="~assets/img/icon5.png" class="app-icon" />
     </div>  
     <div class="row">
       <img src="~assets/img/icon7.png" class="app-icon" />
