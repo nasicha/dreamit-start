@@ -1,32 +1,30 @@
 <template>
   <div class="mid">
-  <div class="row">
-    <img src="~assets/img/icon3.png" class="app-icon" />
-    <img src="~assets/img/icon1.png" class="app-icon" />
-    <div class="app-icon" />
-    <img src="~assets/img/icon5.png" class="app-icon" />
-  </div>  
-  <div class="row">
-    <div class="app-icon" />
-    <img src="~assets/img/icon4.png" class="app-icon" />
-    <div class="app-icon" />
-    <div class="app-icon" />
-  </div>
-  <div class="row">
-    <img src="~assets/img/icon2.png" class="app-icon" />
-    <div class="app-icon" />
-    <img src="~assets/img/icon6.png" class="app-icon" />
-    <div class="app-icon" />
-  </div>
-  <div class="row" />
-  <div class="row">
-    <div class="app-icon" />
-    <div class="app-icon" />
-    <img src="~assets/img/icon.png" class="homescreen-icon app-icon" @click="pressIcon" />
-    <div class="app-icon" />
+  <div class="container">
+    <div class="row">
+      <img src="~assets/img/icon3.png" class="app-icon" />
+      <img src="~assets/img/icon1.png" class="app-icon" />
+      <img src="~assets/img/icon7.png" class="app-icon" />
+    </div>  
+    <div class="row">
+      <img src="~assets/img/icon7.png" class="app-icon" />
+      <img src="~assets/img/icon9.png" class="app-icon" />
+      <img src="~assets/img/icon2.png" class="app-icon" />
+    </div>
+    <div class="row">
+      <img src="~assets/img/icon10.png" class="app-icon" />
+      <img src="~assets/img/icon8.png" class="app-icon" />
+      <img src="~assets/img/icon6.png" class="app-icon" />
+    </div>
+    <div class="row">
+      <img src="~assets/img/icon4.png" class="app-icon" />
+      <img src="~assets/img/icon.png" class="homescreen-icon app-icon" @click="pressIcon" />
+    
+    </div>
+
   </div>
 
-    <div class="dots">
+  <div class="dots">
       <span class="dot"></span>
       <span class="dot"></span>
       <span class="dot"></span>
@@ -43,15 +41,28 @@ const pressIcon = () => {
 </script>
 <style lang="scss" scoped>
 
+.container {
+  position: relative;
+  margin: 24px 32px;
+  width: 100%;
+}
+
 .row {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   gap: 24px;
-  padding: 24px 24px 0;
+  margin-right: 24px;
+  margin-left: 24px;
+  padding: 24px;
   height: 60px;
 
   &:first-of-type {
     margin-top: 32px;
+    padding-top: 0;
+  }
+
+  &:last-of-type {
+    padding-bottom: 0;
   }
 }
 
