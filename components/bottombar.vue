@@ -1,0 +1,33 @@
+<template>
+  <div class="bottombar">
+    <Phone />
+    <Mail />
+    <Camera />
+  </div>
+</template>
+<script setup lang="ts">
+import Phone from "@/assets/img/phone.svg?component";
+import Camera from "@/assets/img/camera.svg?component";
+import Mail from "@/assets/img/mail.svg?component";
+</script>
+<style lang="scss">
+.bottombar {
+  width: 100%;
+  height: 15vh;
+  margin-top: -20px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  backdrop-filter: blur(10px);
+  mask: linear-gradient(transparent, black 20%);
+
+  & svg {
+    padding: 12px;
+    background-color: #eeeeee;
+    
+    border-radius: 10%;
+    width: 40px;
+    height: 40px;
+  }
+}
+</style>

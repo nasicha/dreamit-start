@@ -1,41 +1,59 @@
 <template>
   <div class="video-wrapper">
-  <Transition name="fade">
-    <video v-if="!startApp" src="~assets/video/appstart.mp4" autoplay muted loop>
-        <p>Your browser does not support the video tag.</p>
-    </video>
-  </Transition>
-    <video src="~assets/video/bgWaves.mp4" autoplay muted>
-        <p>Your browser does not support the video tag.</p>
-    </video>
+    <Transition name="fadelong">
+    <div v-if="!startApp">
+      <video src="~assets/video/appstart.mp4#t=1" class="app-start" autoplay muted loop>
+          <p>Your browser does not support the video tag.</p>
+      </video>
+    </div>
+    </Transition>
+      <video src="~assets/video/bgWaves.mp4" class="app-bg" autoplay muted>
+          <p>Your browser does not support the video tag.</p>
+      </video>
   </div>
 </template>
 <script setup lang="ts">
-const props = defineProps({startApp: Boolean})
+import gsap from "gsap";
+defineProps({startApp: Boolean})
 
+setTimeout(() => {
+  gsap.to(".app-start", {
+    duration: .3,
+    ease: "power4.out",
+    opacity: 0,
+  });
+}, 1800);
 
 </script>
 <style lang="scss" scoped>
 .video-wrapper {
   position: absolute;
   width: 100vw;
-  height: 100vh;
-  z-index: -1;
+  height: 100%;
+  z-index: 0;
 
-  video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  div {
+    position: relative;
+    width: inherit;
+    height: inherit;
   }
 }
 
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.2s reverse;
+.app {
+  &-start, &-bg  {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    top: 0;
+  }
+
+  &-start {
+    z-index: 1;
+  }
+  &-bg {
+    z-index: 0;
+  }
 }
 
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
-}
 </style>

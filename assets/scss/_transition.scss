@@ -7,3 +7,21 @@
 .fadelong-leave-to {
   opacity: 0;
 }
+
+.bounce-enter-active {
+  animation: app-in 0.5s;
+}
+.bounce-leave-active {
+  animation: app-in 0.5s reverse;
+}
+
+@keyframes app-in {
+  0% {
+    transform: translateY(-100px) scale(0);
+    border-radius: 50%;
+  }
+  100% {
+    transform: translateY(0)  scale(1);
+    border-radius: 0%;
+  }
+}
