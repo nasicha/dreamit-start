@@ -2,7 +2,7 @@
   <div class="video-wrapper">
     <Transition name="fadelong">
     <div v-if="!startApp">
-      <video src="~assets/video/appstart.mp4#t=1" class="app-start" autoplay muted loop>
+      <video src="~assets/video/appstart.mp4" class="app-start" autoplay muted loop>
           <p>Your browser does not support the video tag.</p>
       </video>
     </div>
@@ -18,11 +18,11 @@ defineProps({startApp: Boolean})
 
 setTimeout(() => {
   gsap.to(".app-start", {
-    duration: .3,
+    duration: .2,
     ease: "power4.out",
     opacity: 0,
   });
-}, 1800);
+}, 2000);
 
 </script>
 <style lang="scss" scoped>

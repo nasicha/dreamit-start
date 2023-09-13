@@ -25,9 +25,9 @@ import Mail from "@/assets/img/mail.svg?component";
     padding: 12px;
     background-color: #eeeeee;
     
-    border-radius: 10%;
-    width: 40px;
-    height: 40px;
+    border-radius: 20%;
+    width: 30px;
+    height: 30px;
   }
 }
 </style>

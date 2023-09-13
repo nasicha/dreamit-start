@@ -23,7 +23,7 @@ const toggleStartClicked = () => {
 
   setTimeout(() => {
     toggleDashboard.value = true;
-  }, 2100);
+  }, 2200);
 };
 
 

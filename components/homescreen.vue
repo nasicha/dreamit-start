@@ -1,8 +1,33 @@
 <template>
   <div class="mid">
-    <img src="~assets/img/icon.png" class="homescreen-icon app-icon" :class="{pressed: pressed}" @click="pressIcon" />
+  <div class="row">
+    <img src="~assets/img/icon3.png" class="app-icon" />
+    <img src="~assets/img/icon1.png" class="app-icon" />
+    <div class="app-icon" />
+    <img src="~assets/img/icon5.png" class="app-icon" />
+  </div>  
+  <div class="row">
+    <div class="app-icon" />
+    <img src="~assets/img/icon4.png" class="app-icon" />
+    <div class="app-icon" />
+    <div class="app-icon" />
+  </div>
+  <div class="row">
+    <img src="~assets/img/icon2.png" class="app-icon" />
+    <div class="app-icon" />
+    <img src="~assets/img/icon6.png" class="app-icon" />
+    <div class="app-icon" />
+  </div>
+  <div class="row" />
+  <div class="row">
+    <div class="app-icon" />
+    <div class="app-icon" />
+    <img src="~assets/img/icon.png" class="homescreen-icon app-icon" @click="pressIcon" />
+    <div class="app-icon" />
+  </div>
 
     <div class="dots">
+      <span class="dot"></span>
       <span class="dot"></span>
       <span class="dot"></span>
     </div>
@@ -10,32 +35,33 @@
   <Bottombar />
 </template>
 <script setup lang="ts">
-const pressed = ref(false);
 const emit = defineEmits(['clicked', 'startClicked'])
 
 const pressIcon = () => {
-  pressed.value = !pressed.value;
-
-  setTimeout(() => {
     emit('startClicked')
-  }, 0);
 };
 </script>
 <style lang="scss" scoped>
+
+.row {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 24px;
+  padding: 24px 24px 0;
+  height: 60px;
+
+  &:first-of-type {
+    margin-top: 32px;
+  }
+}
+
+
+img.app-icon {
+  filter: drop-shadow(3px 3px 8px rgba(0,0,0,0.7));
+}
+
 .app-icon {
-  width: 80px;
-  // filter: drop-shadow(-2px 2px 5px rgba(0,0,0,0.5));
-}
-
-.homescreen-icon {
-  position: relative;
-  margin-top: 50%;
-  transform-origin: center center 0px;
-  transform: matrix(1, 0, 0, 1, 0, 0);
-}
-
-.homescreen-icon .pressed {
-    transform: matrix(0.95, 0, 0, 0.95, 0, 0);
+  width: 60px;
 }
 
 .dots {
@@ -45,13 +71,13 @@ const pressIcon = () => {
 .dot {
   height: 10px;
   width: 10px;
-  background-color: rgba(150,150,150, 0.6);
+    background-color: #444;
   border-radius: 50%;
   display: inline-block;
+    margin-left: 8px;
 
-  &:first-of-type {
-    margin-right: 8px;
-    background-color: #444;
+  &:nth-of-type(2n+1) {
+    background-color: rgba(150,150,150, 0.6);
   }
 }
 </style>
