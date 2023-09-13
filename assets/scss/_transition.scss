@@ -17,11 +17,11 @@
 
 @keyframes app-in {
   0% {
-    transform: translateY(-100px) scale(0);
+    transform: translateY(90px) translateX(50px) scale(0);
     border-radius: 50%;
   }
   100% {
-    transform: translateY(0)  scale(1);
+    transform: translateY(0) translateX(0) scale(1);
     border-radius: 0%;
   }
 }
