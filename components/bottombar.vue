@@ -18,8 +18,6 @@ import Mail from "@/assets/img/mail.svg?component";
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  backdrop-filter: blur(10px);
-  mask: linear-gradient(transparent, black 20%);
 
   & svg {
     padding: 12px;
