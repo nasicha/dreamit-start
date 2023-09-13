@@ -2,7 +2,7 @@
   <div class="page">
     <img src="~assets/img/backgroundImage.jpeg" class="page-background" />
     <Transition name="bounce">
-      <Background v-if="startClicked" :startApp="toggleDashboard" />
+      <Background v-if="startClicked" :startApp="toggleDashboard" @video-finished="startDashboard" />
     </Transition>
     <div class="top" :class="{'top--hide': startClicked}">
       <SmartphoneTopbar />
@@ -20,10 +20,10 @@ const startClicked = ref(false);
 
 const toggleStartClicked = () => {
   startClicked.value = true;
+};
 
-  setTimeout(() => {
-    toggleDashboard.value = true;
-  }, 2200);
+const startDashboard = () => {
+  toggleDashboard.value = true;
 };
 
 

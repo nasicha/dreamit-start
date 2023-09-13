@@ -2,7 +2,7 @@
   <div class="video-wrapper">
     <Transition name="fadelong">
     <div v-if="!startApp">
-      <video src="~assets/video/appstart.mp4" class="app-start" autoplay muted loop>
+      <video src="~assets/video/appstart.mp4" class="app-start" ref="appstart" @timeupdate="checkLength" autoplay muted loop>
           <p>Your browser does not support the video tag.</p>
       </video>
     </div>
@@ -13,16 +13,18 @@
   </div>
 </template>
 <script setup lang="ts">
-import gsap from "gsap";
-defineProps({startApp: Boolean})
+const emit = defineEmits(['finished', 'videoFinished'])
+const props = defineProps({startApp: Boolean})
 
-setTimeout(() => {
-  gsap.to(".app-start", {
-    duration: .2,
-    ease: "power4.out",
-    opacity: 0,
-  });
-}, 2000);
+const startApp = ref(props.startApp);
+
+const checkLength = (e) => {
+    if(e.target.currentTime > 2) {
+        emit('videoFinished');
+        startApp.value = true;
+    }
+};
+
 
 </script>
 <style lang="scss" scoped>
