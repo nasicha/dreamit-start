@@ -19,15 +19,18 @@
   justify-content: flex-end;
   z-index: 20;
   position: relative;
-  background-color: rgba(0, 0, 0, 0.5);
-
-  &--hide {
-    background-color: transparent;
-  }
 
   svg {
     padding: 1rem;
+    fill: #000;
+    transition-delay: 0.2s;
+    transition-duration: 0.2s;
   }
+
+  &--hide svg {
+    fill: #fff
+  }
+
 }
 
 .mid {
@@ -44,6 +47,7 @@
     font-size: 1.7rem;
     margin: 25px 0 0;
     font-weight: 200;
+    opacity: 0;
   }
 
   & h3 {
@@ -52,9 +56,13 @@
     letter-spacing: 0.04rem;
     font-weight: 300;
     margin: 0;
+    opacity: 0;
   }
 }
 
 .bottom {
+  position: relative;
   height: 12vh;
+  z-index: 10;
+  margin-top: 12vh;
 }

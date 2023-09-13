@@ -8,30 +8,20 @@
   opacity: 0;
 }
 
-.scale-enter-active,
-.scale-leave-active {
-  transition: opacity 2s reverse;
-}
-
-.scale-enter-from,
-.scale-leave-to {
-  opacity: 0;
-  transform: scale(0.5);
-}
-
 .bounce-enter-active {
-  animation: bounce-in 0.5s;
+  animation: app-in 0.5s;
 }
 .bounce-leave-active {
-  animation: bounce-in 0.5s reverse;
+  animation: app-in 0.5s reverse;
 }
 
-@keyframes bounce-in {
+@keyframes app-in {
   0% {
-    transform: translateY(-100px) scale(0) ;
-    ;
+    transform: translateY(-100px) scale(0);
+    border-radius: 50%;
   }
   100% {
     transform: translateY(0)  scale(1);
+    border-radius: 0%;
   }
 }
