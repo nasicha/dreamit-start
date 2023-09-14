@@ -2,62 +2,60 @@
   <div class="mid">
   <div class="container">
     <div class="row">
-    <div>
-      <img src="~assets/img/icon3.png" class="app-icon" />
-      <span>{{ truncate(names[3]) }}</span>
-    </div>
-    <div>
-      <img src="~assets/img/icon1.png" class="app-icon" />
-      <span>{{ truncate(names[1]) }}</span>
-    </div>
-    <div>
-      <img src="~assets/img/icon5.png" class="app-icon" />
-      <span>{{ truncate(names[5]) }}</span>
-    </div>
+      <div>
+        <img src="~assets/img/icon3.png" class="app-icon" />
+        <span>{{ truncate(names[3]) }}</span>
+      </div>
+      <div>
+        <img src="~assets/img/icon1.png" class="app-icon" />
+        <span>{{ truncate(names[1]) }}</span>
+      </div>
+      <div @click="pressIcon" >
+        <img src="~assets/img/icon.png" class="homescreen-icon app-icon" />
+        <span>{{ truncate(names[11]) }}</span>
+      </div>
     </div>  
     <div class="row">
-    <div>
-      <img src="~assets/img/icon7.png" class="app-icon" />
-      <span>{{ truncate(names[7]) }}</span>
-    </div>
-    <div>
-      <img src="~assets/img/icon9.png" class="app-icon" />
-      <span>{{ truncate(names[9]) }}</span>
-    </div>
-    <div>
-      <img src="~assets/img/icon2.png" class="app-icon" />
-      <span>{{ truncate(names[2]) }}</span>
-    </div>
-    </div>
-    <div class="row">
-    <div>
-      <img src="~assets/img/icon10.png" class="app-icon" />
-      <span>{{ truncate(names[10]) }}</span>
-    </div>
-    <div>
-      <img src="~assets/img/icon8.png" class="app-icon" />
-      <span>{{ truncate(names[8]) }}</span>
-    </div>
-    <div>
-      <img src="~assets/img/icon6.png" class="app-icon" />
-      <span>{{ truncate(names[6]) }}</span>
-    </div>
+      <div>
+        <img src="~assets/img/icon7.png" class="app-icon" />
+        <span>{{ truncate(names[7]) }}</span>
+      </div>
+      <div>
+        <img src="~assets/img/icon9.png" class="app-icon" />
+        <span>{{ truncate(names[9]) }}</span>
+      </div>
+      <div>
+        <img src="~assets/img/icon2.png" class="app-icon" />
+        <span>{{ truncate(names[2]) }}</span>
+      </div>
     </div>
     <div class="row">
-    <div>
-      <img src="~assets/img/icon4.png" class="app-icon" />
-      <span>{{ truncate(names[4]) }}</span>
+      <div>
+        <img src="~assets/img/icon10.png" class="app-icon" />
+        <span>{{ truncate(names[10]) }}</span>
+      </div>
+      <div>
+        <img src="~assets/img/icon8.png" class="app-icon" />
+        <span>{{ truncate(names[8]) }}</span>
+      </div>
+      <div>
+        <img src="~assets/img/icon6.png" class="app-icon" />
+        <span>{{ truncate(names[6]) }}</span>
+      </div>
     </div>
-    <div>
-      <div class="app-icon" />
+    <div class="row">
+      <div>
+        <img src="~assets/img/icon4.png" class="app-icon" />
+        <span>{{ truncate(names[4]) }}</span>
+      </div>
+      <div>
+        <div class="app-icon" />
+      </div>
+      <div>
+        <img src="~assets/img/icon5.png" class="app-icon" />
+        <span>{{ truncate(names[5]) }}</span>
+      </div>
     </div>
-    <div @click="pressIcon" >
-      <img src="~assets/img/icon.png" class="homescreen-icon app-icon" />
-      <span>{{ truncate(names[11]) }}</span>
-    </div>
-    
-    </div>
-
   </div>
 
   <div class="dots">
@@ -78,7 +76,7 @@ const pressIcon = () => {
 const names = {
   '1': 'Example',
   '2': 'skillz',
-  '3': 'Tide Art',
+  '3': 'Tidal Art',
   '4': 'Act Up',
   '5': 'RSM Retro',
   '6': 'Origami',
