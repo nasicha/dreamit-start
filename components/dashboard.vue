@@ -9,7 +9,7 @@
     <h2 id="lunaDream">Luna's Dream</h2>
     <h3 id="premium">PREMIUM</h3>    
     <div class="mid-btn" id="btn" >
-      <img src="~assets/img/GLOW.png" class="glow" />
+      <img src="~assets/img/GLOW.png" class="glow" :class="{animateGlow: animateGlow}" />
       <img src="~assets/img/dream-btn.png" class="dream-btn" :class="{pressed: pressed}" @click="startDream" />
     </div>  
   </div>
@@ -28,6 +28,7 @@ import Category from "@/assets/img/category.svg?component";
 
 const start = ref(false);
 const pressed = ref(false);
+const animateGlow = ref(false);
 
 const startDream = () => {
   pressed.value = !pressed.value;
@@ -91,8 +92,11 @@ onMounted(() => {
       ease: "power4.out",
       scale: "1",
     });
-
   }, firstDelay+delay*2);
+
+  setTimeout(() => {
+    animateGlow.value = true;
+  }, 100+firstDelay+delay*2);
 });
 
 </script>
@@ -153,6 +157,9 @@ $base-color: rgb(3, 19, 65);
   transform: scale(1);
 
 }
+.animateGlow {
+    animation: pulse 1.5s infinite;
+  }
 
 .bottom {
   background-color: $base-color;
