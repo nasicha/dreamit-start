@@ -50,7 +50,7 @@ onMounted(() => {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: rgb(32,34,36);
+    background-color: black;
     z-index: 16;
   }
 }
